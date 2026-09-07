@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated data
+vectorstore/
+data/processed/
+
+# OS/editor junk
+.DS_Store
+.vscode/
