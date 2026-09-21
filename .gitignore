@@ -15,3 +15,10 @@ data/processed/
 # OS/editor junk
 .DS_Store
 .vscode/
+
+# Logs
+docs/figures/screenshots/
+
+FINAL_RESEARCH_PAPER.docx
+~$NAL_RESEARCH_PAPER.docx
+docs/paper

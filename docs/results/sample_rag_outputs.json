@@ -1,0 +1,57 @@
+{
+  "sample_successful_rag_output": {
+    "query_id": "eval_q02",
+    "category": "factual",
+    "query": "How many packages were infected by the ChainDrop npm worm?",
+    "expected_abstention": false,
+    "is_abstention": false,
+    "latency_ms": 1324.83,
+    "generated_answer": "ChainDrop: Inside a Self-Propagating npm Worm Executive Summary Cloud credentials npm and GitHub tokens SSH keys Other sensitive developer data A self-propagating npm worm nicknamed ChainDrop infected over 400 packages that are collectively downloaded hundreds of millions of times each week [1]. Related Unit 42 Topics AI, Malware, Supply Chain, npm Packages Details of the ChainDrop npm Worm Indicators and Behavior of the ChainDrop Worm Cortex XDR and XSIAM provide behavioral detection, investigation and response that can help organizations address ChainDrop activity executing in development environments [4]. Once installed, ChainDrop steals: It can also extract temporary credentials from GitHub Actions runner memory and use stolen npm publishing tokens to infect and republish additional packages while preserving their legitimate functionality [1].",
+    "citation_count": 2,
+    "citations": [
+      {
+        "citation_id": 1,
+        "chunk_id": "unit42_chaindrop_npm_worm_2026_p1_c0",
+        "document_id": "unit42_chaindrop_npm_worm_2026",
+        "document_title": "Unit42 Chaindrop Npm Worm 2026",
+        "page_number": 1,
+        "source": "local_pdf",
+        "rank": 1,
+        "score": 8.100496292114258,
+        "snippet": "ChainDrop: Inside a Self-Propagating npm Worm Executive Summary Cloud credentials npm and GitHub tokens SSH keys Other sensitive developer data A self-propagating npm worm nicknamed ChainDrop infected...",
+        "is_valid": true
+      },
+      {
+        "citation_id": 4,
+        "chunk_id": "unit42_chaindrop_npm_worm_2026_p3_c0",
+        "document_id": "unit42_chaindrop_npm_worm_2026",
+        "document_title": "Unit42 Chaindrop Npm Worm 2026",
+        "page_number": 3,
+        "source": "local_pdf",
+        "rank": 4,
+        "score": 2.7612876892089844,
+        "snippet": "Related Unit 42 Topics AI, Malware, Supply Chain, npm Packages Details of the ChainDrop npm Worm Indicators and Behavior of the ChainDrop Worm Cortex XDR and XSIAM provide behavioral detection, invest...",
+        "is_valid": true
+      }
+    ],
+    "correctness_f1": 0.2778,
+    "evidence_grounding": 1.0,
+    "citation_precision": 0.5,
+    "citation_validity": 1.0
+  },
+  "sample_unanswerable_abstention_output": {
+    "query_id": "eval_q23",
+    "category": "unsupported_unanswerable",
+    "query": "What zero-day exploit was deployed against iOS 19 in the 2029 Stuxnet reboot?",
+    "expected_abstention": true,
+    "is_abstention": true,
+    "latency_ms": 2436.57,
+    "generated_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
+    "citation_count": 0,
+    "citations": [],
+    "correctness_f1": 1.0,
+    "evidence_grounding": 1.0,
+    "citation_precision": 1.0,
+    "citation_validity": 1.0
+  }
+}

@@ -90,3 +90,104 @@ def ndcg_at_k(retrieved_ids: list[str], relevance_grades: dict, k: int) -> float
     if idcg == 0:
         return 0.0
     return dcg / idcg
+
+
+# =====================================================================
+# Generation & RAG Quality Metrics (Phase 2)
+# =====================================================================
+
+import re
+
+
+def compute_token_f1(prediction: str, ground_truth: str) -> float:
+    """
+    Compute token-level F1 overlap between prediction and reference answer.
+    Standard QA metric (SQuAD / RAG QA evaluation).
+    """
+    pred_tokens = [t.lower() for t in re.findall(r"[a-zA-Z0-9._-]+", prediction)]
+    gold_tokens = [t.lower() for t in re.findall(r"[a-zA-Z0-9._-]+", ground_truth)]
+    if not pred_tokens or not gold_tokens:
+        return 1.0 if pred_tokens == gold_tokens else 0.0
+
+    common = set(pred_tokens) & set(gold_tokens)
+    if not common:
+        return 0.0
+
+    prec = sum(min(pred_tokens.count(t), gold_tokens.count(t)) for t in common) / len(pred_tokens)
+    rec = sum(min(pred_tokens.count(t), gold_tokens.count(t)) for t in common) / len(gold_tokens)
+
+    if prec + rec == 0:
+        return 0.0
+    return 2.0 * (prec * rec) / (prec + rec)
+
+
+def compute_evidence_grounding(answer: str, evidence_chunks: list[dict]) -> float:
+    """
+    Evidence Grounding / Faithfulness:
+    Evaluates what fraction of sentences in the generated answer are grounded
+    in (substantially supported by) the retrieved evidence passages.
+    """
+    # Remove citations before splitting
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", answer) if len(s.strip()) > 10]
+    if not sentences:
+        return 1.0
+
+    combined_evidence = " ".join(c.get("text", "") for c in evidence_chunks).lower()
+    if not combined_evidence:
+        return 0.0
+
+    grounded_count = 0
+    for sent in sentences:
+        # Strip citation markers like [1], [2] for content matching
+        clean_sent = re.sub(r"\[\d+\]", "", sent).strip()
+        words = [w.lower() for w in re.findall(r"[a-zA-Z0-9._-]+", clean_sent) if len(w) > 3]
+        if not words:
+            grounded_count += 1
+            continue
+        matched = sum(1 for w in words if w in combined_evidence)
+        if matched / len(words) >= 0.5:
+            grounded_count += 1
+
+    return grounded_count / len(sentences)
+
+
+def compute_citation_metrics(citations: list[dict], relevant_chunk_ids: set[str]) -> dict[str, float]:
+    """
+    Citation correctness:
+    - citation_validity: fraction of citations pointing to valid retrieved chunks (no phantom citations)
+    - citation_precision: fraction of citations pointing to ground-truth relevant chunks
+    - citation_recall: fraction of relevant chunks that were cited in the answer
+    """
+    if not citations:
+        return {"citation_validity": 1.0, "citation_precision": 0.0, "citation_recall": 0.0}
+
+    valid_count = sum(1 for c in citations if c.get("is_valid", False))
+    validity = valid_count / len(citations)
+
+    if not relevant_chunk_ids:
+        return {"citation_validity": validity, "citation_precision": 0.0, "citation_recall": 0.0}
+
+    cited_cids = {c.get("chunk_id") for c in citations if c.get("is_valid", False)}
+    true_positive_cids = cited_cids & relevant_chunk_ids
+    precision = len(true_positive_cids) / len(cited_cids) if cited_cids else 0.0
+    recall = len(true_positive_cids) / len(relevant_chunk_ids)
+
+    return {
+        "citation_validity": validity,
+        "citation_precision": precision,
+        "citation_recall": recall,
+    }
+
+
+def evaluate_abstention(is_abstention: bool, expected_abstention: bool) -> dict[str, bool]:
+    """
+    Evaluate abstention accuracy:
+    - correct_decision: True if pipeline decision matched expectation
+    - is_false_positive: answered when should have abstained
+    - is_false_negative: abstained when should have answered
+    """
+    return {
+        "correct_decision": (is_abstention == expected_abstention),
+        "is_false_positive": (not is_abstention and expected_abstention),
+        "is_false_negative": (is_abstention and not expected_abstention),
+    }

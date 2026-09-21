@@ -1,0 +1,349 @@
+{
+  "dataset_version": "1.0",
+  "description": "Comprehensive, reproducible RAG evaluation dataset for Threat Intelligence Report Analysis, covering 12 distinct analytical categories with verified ground-truth chunk IDs and answers.",
+  "total_queries": 24,
+  "categories": [
+    "factual",
+    "threat_actor",
+    "malware",
+    "campaign",
+    "cve",
+    "mitre_attack",
+    "credentials",
+    "persistence",
+    "c2_infrastructure",
+    "cross_document",
+    "paraphrased",
+    "unsupported_unanswerable"
+  ],
+  "queries": [
+    {
+      "query_id": "eval_q01",
+      "category": "factual",
+      "query": "What was the most common initial infection vector identified in Mandiant M-Trends 2026?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Exploits remain the most common vector for a sixth consecutive year, while voice-based social engineering (vishing) rose to the number two spot for initial infection vectors.",
+      "relevant_chunk_ids": ["googlecloud_threat_horizons_h1_2026_p4_c1"],
+      "relevance_grades": {"googlecloud_threat_horizons_h1_2026_p4_c1": 2},
+      "key_identifiers": ["M-Trends", "2026"]
+    },
+    {
+      "query_id": "eval_q02",
+      "category": "factual",
+      "query": "How many packages were infected by the ChainDrop npm worm?",
+      "expected_abstention": false,
+      "ground_truth_answer": "A self-propagating npm worm nicknamed ChainDrop infected over 400 packages that are collectively downloaded hundreds of millions of times each week.",
+      "relevant_chunk_ids": ["unit42_chaindrop_npm_worm_2026_p1_c0"],
+      "relevance_grades": {"unit42_chaindrop_npm_worm_2026_p1_c0": 2},
+      "key_identifiers": ["ChainDrop", "npm"]
+    },
+    {
+      "query_id": "eval_q03",
+      "category": "threat_actor",
+      "query": "Which threat actor claimed responsibility for the large-scale credential theft in August 2026?",
+      "expected_abstention": false,
+      "ground_truth_answer": "In August 2026, the threat actor TheHatman claimed to have stolen a large volume of credentials.",
+      "relevant_chunk_ids": ["unit42_large_scale_credential_attacks_2026_p1_c0"],
+      "relevance_grades": {"unit42_large_scale_credential_attacks_2026_p1_c0": 2},
+      "key_identifiers": ["TheHatman"]
+    },
+    {
+      "query_id": "eval_q04",
+      "category": "threat_actor",
+      "query": "What threat group conducted voice phishing campaigns targeting Microsoft Teams users?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The Spring Ring campaign conducted voice phishing (vishing) campaigns targeting corporate users inside Microsoft Teams.",
+      "relevant_chunk_ids": [
+        "unit42_spring_ring_voice_phishing_2026_p1_c0",
+        "unit42_spring_ring_voice_phishing_2026_p2_c1"
+      ],
+      "relevance_grades": {
+        "unit42_spring_ring_voice_phishing_2026_p1_c0": 2,
+        "unit42_spring_ring_voice_phishing_2026_p2_c1": 1
+      },
+      "key_identifiers": ["Spring Ring", "Microsoft Teams"]
+    },
+    {
+      "query_id": "eval_q05",
+      "category": "malware",
+      "query": "Which malware families query LLMs mid-execution to evade detection according to M-Trends 2026?",
+      "expected_abstention": false,
+      "ground_truth_answer": "In the wild, malware families like PROMPTFLUX and PROMPTSTEAL actively query LLMs mid-execution to evade detection.",
+      "relevant_chunk_ids": ["googlecloud_threat_horizons_h1_2026_p4_c0"],
+      "relevance_grades": {"googlecloud_threat_horizons_h1_2026_p4_c0": 2},
+      "key_identifiers": ["PROMPTFLUX", "PROMPTSTEAL"]
+    },
+    {
+      "query_id": "eval_q06",
+      "category": "malware",
+      "query": "What is the Shai-Hulud malware described in threat intelligence reports?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The Shai-Hulud worm is a self-propagating malware that automatically publishes infected packages in the npm ecosystem.",
+      "relevant_chunk_ids": ["unit42_npm_supply_chain_attacks_2026_p1_c0"],
+      "relevance_grades": {"unit42_npm_supply_chain_attacks_2026_p1_c0": 2},
+      "key_identifiers": ["Shai-Hulud"]
+    },
+    {
+      "query_id": "eval_q07",
+      "category": "campaign",
+      "query": "What communication platform was leveraged as the primary vector in the Spring Ring campaign?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The Spring Ring campaign targeted Microsoft Teams by initiating external chats and voice phishing calls with employees.",
+      "relevant_chunk_ids": [
+        "unit42_spring_ring_voice_phishing_2026_p1_c0",
+        "unit42_spring_ring_voice_phishing_2026_p2_c1"
+      ],
+      "relevance_grades": {
+        "unit42_spring_ring_voice_phishing_2026_p1_c0": 2,
+        "unit42_spring_ring_voice_phishing_2026_p2_c1": 2
+      },
+      "key_identifiers": ["Microsoft Teams", "Spring Ring"]
+    },
+    {
+      "query_id": "eval_q08",
+      "category": "campaign",
+      "query": "How does the pay-per-install (PPI) network malware campaign distribute malicious loaders?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The PPI network campaign distributed loaders through commodity infrastructure, including YouTube channels promoting gaming content laced with links to download malware, and SEO poisoning.",
+      "relevant_chunk_ids": [
+        "unit42_ppi_network_malware_campaign_2026_p1_c0",
+        "unit42_ppi_network_malware_campaign_2026_p1_c1"
+      ],
+      "relevance_grades": {
+        "unit42_ppi_network_malware_campaign_2026_p1_c0": 2,
+        "unit42_ppi_network_malware_campaign_2026_p1_c1": 2
+      },
+      "key_identifiers": ["PPI", "pay-per-install"]
+    },
+    {
+      "query_id": "eval_q09",
+      "category": "cve",
+      "query": "What vulnerability is identified as CVE-2023-24955?",
+      "expected_abstention": false,
+      "ground_truth_answer": "CVE-2023-24955 is a Microsoft SharePoint Server Remote Code Execution vulnerability, frequently exploited in chained attacks.",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p9_c0",
+        "googlecloud_threat_horizons_h1_2026_p45_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p9_c0": 2,
+        "googlecloud_threat_horizons_h1_2026_p45_c0": 2
+      },
+      "key_identifiers": ["CVE-2023-24955"]
+    },
+    {
+      "query_id": "eval_q10",
+      "category": "cve",
+      "query": "Which vulnerability is tracked as CVE-2023-29357 and how was it exploited?",
+      "expected_abstention": false,
+      "ground_truth_answer": "CVE-2023-29357 is a Microsoft SharePoint Server elevation of privilege vulnerability that enables authentication bypass, often chained with CVE-2023-24955 for full remote code execution.",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p9_c0",
+        "googlecloud_threat_horizons_h1_2026_p45_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p9_c0": 2,
+        "googlecloud_threat_horizons_h1_2026_p45_c0": 2
+      },
+      "key_identifiers": ["CVE-2023-29357"]
+    },
+    {
+      "query_id": "eval_q11",
+      "category": "mitre_attack",
+      "query": "Which MITRE ATT&CK technique is referenced for OS Credential Dumping?",
+      "expected_abstention": false,
+      "ground_truth_answer": "T1003 is the MITRE ATT&CK technique for OS Credential Dumping, including sub-techniques like T1003.003 (NTDS).",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p87_c0",
+        "googlecloud_threat_horizons_h1_2026_p90_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p87_c0": 2,
+        "googlecloud_threat_horizons_h1_2026_p90_c0": 2
+      },
+      "key_identifiers": ["T1003"]
+    },
+    {
+      "query_id": "eval_q12",
+      "category": "mitre_attack",
+      "query": "What MITRE ATT&CK techniques are cataloged in the M-Trends 2026 report for credential access?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The M-Trends 2026 report catalogs T1003 for OS Credential Dumping, along with NTDS dumping (T1003.003) and passwd access (T1003.008).",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p87_c0",
+        "googlecloud_threat_horizons_h1_2026_p90_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p87_c0": 2,
+        "googlecloud_threat_horizons_h1_2026_p90_c0": 2
+      },
+      "key_identifiers": ["T1003", "T1003.003"]
+    },
+    {
+      "query_id": "eval_q13",
+      "category": "credentials",
+      "query": "What types of developer secrets and credentials were stolen by the ChainDrop npm worm?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The ChainDrop npm worm exfiltrated cloud credentials, npm and GitHub tokens, SSH keys, and other sensitive developer data.",
+      "relevant_chunk_ids": ["unit42_chaindrop_npm_worm_2026_p1_c0"],
+      "relevance_grades": {"unit42_chaindrop_npm_worm_2026_p1_c0": 2},
+      "key_identifiers": ["ChainDrop", "SSH keys"]
+    },
+    {
+      "query_id": "eval_q14",
+      "category": "credentials",
+      "query": "How did attackers harvest credentials in the large-scale credential theft attacks?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Attackers utilized infostealers and credential compromise against exposed perimeter devices and corporate accounts to steal large volumes of session tokens and passwords.",
+      "relevant_chunk_ids": [
+        "unit42_large_scale_credential_attacks_2026_p1_c0",
+        "unit42_large_scale_credential_attacks_2026_p8_c0"
+      ],
+      "relevance_grades": {
+        "unit42_large_scale_credential_attacks_2026_p1_c0": 2,
+        "unit42_large_scale_credential_attacks_2026_p8_c0": 1
+      },
+      "key_identifiers": ["infostealers", "credential"]
+    },
+    {
+      "query_id": "eval_q15",
+      "category": "persistence",
+      "query": "How did the PPI network malware maintain persistence on victim machines?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The malware maintained persistence on victim systems using scheduled tasks and Windows registry run keys.",
+      "relevant_chunk_ids": [
+        "unit42_ppi_network_malware_campaign_2026_p15_c0",
+        "unit42_ppi_network_malware_campaign_2026_p21_c0"
+      ],
+      "relevance_grades": {
+        "unit42_ppi_network_malware_campaign_2026_p15_c0": 2,
+        "unit42_ppi_network_malware_campaign_2026_p21_c0": 2
+      },
+      "key_identifiers": ["scheduled tasks", "registry"]
+    },
+    {
+      "query_id": "eval_q16",
+      "category": "persistence",
+      "query": "What extreme persistence mechanisms were noted for multi-year intrusions in M-Trends 2026?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Multi-year intrusions highlighted extreme persistence through adversary focus on virtualized infrastructure, ESXi hypervisors, and systematic exploitation of edge and core network devices.",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p2_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p2_c0": 2
+      },
+      "key_identifiers": ["virtualized infrastructure", "ESXi"]
+    },
+    {
+      "query_id": "eval_q17",
+      "category": "c2_infrastructure",
+      "query": "How was multi-agent orchestration coordinated during the AI-assisted attack?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The attack coordinated multiple frontier AI agents in parallel using structured Markdown files to pass information between agent sessions.",
+      "relevant_chunk_ids": ["unit42_ai_assisted_cyber_attack_2026_p2_c0"],
+      "relevance_grades": {"unit42_ai_assisted_cyber_attack_2026_p2_c0": 2},
+      "key_identifiers": ["Markdown", "frontier AI"]
+    },
+    {
+      "query_id": "eval_q18",
+      "category": "c2_infrastructure",
+      "query": "What commodity infrastructure was used to camouflage the pay-per-install malware campaign?",
+      "expected_abstention": false,
+      "ground_truth_answer": "The campaign camouflaged itself behind commodity infrastructure, utilizing YouTube video channels promoting gaming downloads and SEO poisoning to host and deliver malicious loaders.",
+      "relevant_chunk_ids": [
+        "unit42_ppi_network_malware_campaign_2026_p1_c0",
+        "unit42_ppi_network_malware_campaign_2026_p1_c1"
+      ],
+      "relevance_grades": {
+        "unit42_ppi_network_malware_campaign_2026_p1_c0": 2,
+        "unit42_ppi_network_malware_campaign_2026_p1_c1": 2
+      },
+      "key_identifiers": ["commodity infrastructure", "YouTube"]
+    },
+    {
+      "query_id": "eval_q19",
+      "category": "cross_document",
+      "query": "What shared observation regarding voice phishing (vishing) is reported by both Google Cloud Threat Horizons and Unit 42 Spring Ring?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Both reports observe a major surge in voice-based social engineering (vishing) as a primary initial infection vector, targeting corporate collaboration channels like Microsoft Teams.",
+      "relevant_chunk_ids": [
+        "googlecloud_threat_horizons_h1_2026_p4_c1",
+        "unit42_spring_ring_voice_phishing_2026_p1_c0"
+      ],
+      "relevance_grades": {
+        "googlecloud_threat_horizons_h1_2026_p4_c1": 2,
+        "unit42_spring_ring_voice_phishing_2026_p1_c0": 2
+      },
+      "key_identifiers": ["vishing", "voice phishing"]
+    },
+    {
+      "query_id": "eval_q20",
+      "category": "cross_document",
+      "query": "How do the ChainDrop and npm Threat Landscape reports describe the propagation of malicious packages?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Both reports describe self-propagating worm attacks (such as ChainDrop and Shai-Hulud) that compromise developer tokens to automatically publish malicious dependencies across the npm registry.",
+      "relevant_chunk_ids": [
+        "unit42_chaindrop_npm_worm_2026_p1_c0",
+        "unit42_npm_supply_chain_attacks_2026_p1_c0"
+      ],
+      "relevance_grades": {
+        "unit42_chaindrop_npm_worm_2026_p1_c0": 2,
+        "unit42_npm_supply_chain_attacks_2026_p1_c0": 2
+      },
+      "key_identifiers": ["ChainDrop", "Shai-Hulud", "npm"]
+    },
+    {
+      "query_id": "eval_q21",
+      "category": "paraphrased",
+      "query": "How can unauthorized workloads spoof trusted identity tokens in Kubernetes clusters using SPIFFE/SPIRE?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Attackers with root access on a compromised Kubernetes node can harvest workload identities and abuse the SPIFFE/SPIRE agent API to spoof trusted identities across clusters.",
+      "relevant_chunk_ids": [
+        "unit42_kubernetes_spiffe_spire_identity_spoofing_2026_p2_c1",
+        "unit42_kubernetes_spiffe_spire_identity_spoofing_2026_p18_c0"
+      ],
+      "relevance_grades": {
+        "unit42_kubernetes_spiffe_spire_identity_spoofing_2026_p2_c1": 2,
+        "unit42_kubernetes_spiffe_spire_identity_spoofing_2026_p18_c0": 1
+      },
+      "key_identifiers": ["SPIFFE", "SPIRE", "Kubernetes"]
+    },
+    {
+      "query_id": "eval_q22",
+      "category": "paraphrased",
+      "query": "In what manner did frontier artificial intelligence accelerate operational efficiency during the autonomous cyber intrusion?",
+      "expected_abstention": false,
+      "ground_truth_answer": "Frontier AI enabled machine-speed attack chains without requiring elite tradecraft, orchestrating parallel agents and generating custom execution scripts.",
+      "relevant_chunk_ids": [
+        "unit42_ai_assisted_cyber_attack_2026_p1_c0",
+        "unit42_ai_assisted_cyber_attack_2026_p1_c1"
+      ],
+      "relevance_grades": {
+        "unit42_ai_assisted_cyber_attack_2026_p1_c0": 2,
+        "unit42_ai_assisted_cyber_attack_2026_p1_c1": 2
+      },
+      "key_identifiers": ["frontier AI", "machine-speed"]
+    },
+    {
+      "query_id": "eval_q23",
+      "category": "unsupported_unanswerable",
+      "query": "What zero-day exploit was deployed against iOS 19 in the 2029 Stuxnet reboot?",
+      "expected_abstention": true,
+      "ground_truth_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
+      "relevant_chunk_ids": [],
+      "relevance_grades": {},
+      "key_identifiers": ["iOS 19", "2029", "Stuxnet"]
+    },
+    {
+      "query_id": "eval_q24",
+      "category": "unsupported_unanswerable",
+      "query": "Which cyber espionage group carried out the December 2015 blackout attack on the Ukrainian power grid according to these reports?",
+      "expected_abstention": true,
+      "ground_truth_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
+      "relevant_chunk_ids": [],
+      "relevance_grades": {},
+      "key_identifiers": ["2015", "Ukrainian power grid"]
+    }
+  ]
+}
