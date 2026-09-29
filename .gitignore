@@ -22,3 +22,7 @@ docs/figures/screenshots/
 FINAL_RESEARCH_PAPER.docx
 ~$NAL_RESEARCH_PAPER.docx
 docs/paper
+build_research_paper_expanded.py
+scripts/paper_content
+content_expansion_report.md
+FINAL_RESEARCH_PAPER_EXPANDED.docx
