@@ -5,7 +5,7 @@
     "query": "What was the most common initial infection vector identified in Mandiant M-Trends 2026?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 909.42,
+    "latency_ms": 1042.98,
     "generated_answer": "38 Special Report: Mandiant M-Trends 2026 In 2025, the most common initial infection vector found during Mandiant investigations of cloud-related compromises was voice phishing, at 23%, followed by third-party compromise (17%), stolen credentials (16%), email phishing (15%), insider threat (14%), and exploits (6%) [1]. 50 Special Report: Mandiant M-Trends 2026 JAPAC JAPAC Exploit 33% Stolen Credentials 23% Prior Compromise 16% Initial Infection Vector The most frequently observed initial infection vector for 2025 Mandiant investigations in JAPAC was exploits, at 33%, followed by stolen credentials at 23% [2]. 11 Special Report: Mandiant M-Trends 2026 Initial Infection Vector For the sixth year running, exploits represented the most frequently observed initial infection vector in 2025 Mandiant incident response investigations [4].",
     "citation_count": 3,
     "citations": [
@@ -57,7 +57,7 @@
     "query": "How many packages were infected by the ChainDrop npm worm?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1324.83,
+    "latency_ms": 1443.28,
     "generated_answer": "ChainDrop: Inside a Self-Propagating npm Worm Executive Summary Cloud credentials npm and GitHub tokens SSH keys Other sensitive developer data A self-propagating npm worm nicknamed ChainDrop infected over 400 packages that are collectively downloaded hundreds of millions of times each week [1]. Related Unit 42 Topics AI, Malware, Supply Chain, npm Packages Details of the ChainDrop npm Worm Indicators and Behavior of the ChainDrop Worm Cortex XDR and XSIAM provide behavioral detection, investigation and response that can help organizations address ChainDrop activity executing in development environments [4]. Once installed, ChainDrop steals: It can also extract temporary credentials from GitHub Actions runner memory and use stolen npm publishing tokens to infect and republish additional packages while preserving their legitimate functionality [1].",
     "citation_count": 2,
     "citations": [
@@ -97,7 +97,7 @@
     "query": "Which threat actor claimed responsibility for the large-scale credential theft in August 2026?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 932.94,
+    "latency_ms": 1011.8,
     "generated_answer": "Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18) Executive Summary Details of noteworthy large scale credential attacks Actionable guidance for mitigating these attacks The Hatman attack: In August 2026, the actor TheHatman claimed to have stolen large volume of credentials from organizations' Microsoft Entra tenants Fortibleed Credential Campaign: In June 2026, there was a large-scale password spraying campaign targeting Fortinet devices Identity has effectively become the new perimeter, where cybercriminals are increasingly choosing to log in rather than break in [1]. Cortex Cloud Identity Security Unit 42 Deep and Dark Web Service Idira Identity Threat Protection (ITP) Idira Multi-Factor Authentication (MFA) Idira Privileged Access Management (PAM) Related Unit 42 Topics Fortibleed, Credential Theft Activity From TheHatman FortiBleed Campaign The Unit 42 Incident Response team can also be engaged to help with a compromise or to provide a proactive assessment to lower your risk [2]. A large-scale password spraying and credential theft campaign (\u201cFortiBleed\u201d) against Fortinet devices was initially disclosed in June 2026 [2].",
     "citation_count": 2,
     "citations": [
@@ -137,7 +137,7 @@
     "query": "What threat group conducted voice phishing campaigns targeting Microsoft Teams users?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 836.72,
+    "latency_ms": 914.33,
     "generated_answer": "Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams Executive Summary Advanced URL Filtering and Advanced DNS Security Cortex XDR and XSIAM Cortex Advanced Email Security Cortex Cloud Identity Threat Detection Idira Threat Detection and Response (ITDR) Between January and April 2026, we uncovered a coordinated social engineering operation that leveraged external Microsoft Teams accounts to masquerade as IT help desk personnel [1]. External user created a Microsoft Teams conversation with suspicious operations XDR Analytics, Identity Threats Phishing (T1566) External user added a link to a Microsoft Teams chat XDR Analytics, Identity Threats Phishing (T1566) External user call via Microsoft Teams XDR Analytics, Identity Threats Phishing: Spearphishing Voice (T1566.004) Rare process execution by user XDR Analytics, UEBA User Execution (T1204) Rare process execution in organization XDR Analytics, UEBA User Execution (T1204) Multiple rare process executions in organization XDR Analytics, UEBA User Execution (T1204) Copyright \u00a9 2026 Palo Alto Networks [2]. \u2013 Fieldeffect PetitPotam \u2013 by topotam on GitHub APT29 Phishing Attacks via Microsoft Teams: Tactics, Techniques, and Prevention \u2013 InsiderSecurity Phishing Threat Trends Report [PDF] \u2013 KnowBe4 Crosstenant helpdesk impersonation to data exfiltration: A human-operated intrusion playbook \u2013 Microsoft Table 2 [3].",
     "citation_count": 3,
     "citations": [
@@ -189,7 +189,7 @@
     "query": "Which malware families query LLMs mid-execution to evade detection according to M-Trends 2026?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 909.03,
+    "latency_ms": 960.55,
     "generated_answer": "In the wild, malware families like PROMPTFLUX and PROMPTSTEAL actively query LLMs mid-execution to evade detection, while \u201cdistillation attacks\u201d threaten intellectual property by extracting the proprietary logic and specialized training data of high-value machine learning models [1]. 84 Special Report: Mandiant M-Trends 2026 Our threat intelligence analysts have observed adversaries leveraging AI to accelerate attacks, shifting from mass, static email campaigns toward hyper-personalized, voice-based social engineering, and deploying malware capable of querying large language models mid-execution [2]. 24 Special Report: Mandiant M-Trends 2026 Malware Families by Category Newly Tracked Malware Newly tracked malware are families that were first identified and named between Jan [3].",
     "citation_count": 3,
     "citations": [
@@ -241,7 +241,7 @@
     "query": "What is the Shai-Hulud malware described in threat intelligence reports?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1416.59,
+    "latency_ms": 1411.21,
     "generated_answer": "attacker- created GitHub repositories, \"Miasma: The Spreading Blight.\" The threat is derived from the Mini Shai-Hulud malware open-sourced by TeamPCP on May 12, with substantially identical tradecraft [3]. The Shai- Hulud worm, a self-replicating malware that automated the compromise and redistribution of malicious packages, marked the end of the \u201cnuisance\u201d era of npm attacks and the beginning of a high- consequence threat landscape [1]. It has been noted that inside public GitHub repositories that were published contained the string \u201cShai-Hulud: The Third Coming.\u201d Attackers deployed the same payload across multiple Checkmarx distribution channels, indicating a coordinated campaign to weaponize compromised developer tooling credentials to maximize the area of impact: Palo Alto Networks customers are better protected from the threats described in this article through the following products and services: Copyright \u00a9 2026 Palo Alto Networks [4].",
     "citation_count": 3,
     "citations": [
@@ -293,7 +293,7 @@
     "query": "What communication platform was leveraged as the primary vector in the Spring Ring campaign?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1330.2,
+    "latency_ms": 1303.25,
     "generated_answer": "Conclusion Trusted SaaS applications are not inherently safe: Attackers exploit the confidence that employees place in communications platforms Attack vectors are simple and scalable: By using seemingly legitimate external tenants and professional vishing lures, attackers can target hundreds of employees across many industries with minimal friction Adaptability is key: Attackers are evolving their methods, shifting from basic credential harvesting to human-led lateral movement Palo Alto Networks Protection and Mitigation The Spring Ring campaigns demonstrate a strategic pivot in social engineering, where attackers move beyond email phishing to enterprise collaboration tools [2]. These two campaigns demonstrate the weaponization of communication platforms as identity becomes a primary attack vector [1]. Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams Executive Summary Advanced URL Filtering and Advanced DNS Security Cortex XDR and XSIAM Cortex Advanced Email Security Cortex Cloud Identity Threat Detection Idira Threat Detection and Response (ITDR) Between January and April 2026, we uncovered a coordinated social engineering operation that leveraged external Microsoft Teams accounts to masquerade as IT help desk personnel [1].",
     "citation_count": 2,
     "citations": [
@@ -333,7 +333,7 @@
     "query": "How does the pay-per-install (PPI) network malware campaign distribute malicious loaders?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 850.16,
+    "latency_ms": 783.42,
     "generated_answer": "This pay-per-install (PPI) marketplace drove hundreds of infections through YouTube channels and a parallel search engine optimization (SEO)-poisoning funnel, all using the same custom loader [1]. PPI networks operate as underground marketplaces [2]. These initial access partners either advertise their availability to distribute malware on behalf of secondary groups, or respond to advertisements posted by groups seeking initial access or malware distribution [4].",
     "citation_count": 3,
     "citations": [
@@ -385,7 +385,7 @@
     "query": "What vulnerability is identified as CVE-2023-24955?",
     "expected_abstention": false,
     "is_abstention": true,
-    "latency_ms": 1394.4,
+    "latency_ms": 1379.0,
     "generated_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
     "citation_count": 0,
     "citations": [],
@@ -400,7 +400,7 @@
     "query": "Which vulnerability is tracked as CVE-2023-29357 and how was it exploited?",
     "expected_abstention": false,
     "is_abstention": true,
-    "latency_ms": 1040.33,
+    "latency_ms": 936.44,
     "generated_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
     "citation_count": 0,
     "citations": [],
@@ -415,7 +415,7 @@
     "query": "Which MITRE ATT&CK technique is referenced for OS Credential Dumping?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1458.79,
+    "latency_ms": 1306.49,
     "generated_answer": "41 Special Report: Mandiant M-Trends 2026 Top 10 Most Frequently Seen MITRE ATT&CK Sub-Techniques Rank Technique Percent 1 T1059.003: Windows Command Shell 26.2% 2 T1059.001: PowerShell 24.0% 3 T1021.001: Remote Desktop Protocol 22.1% 4 T1021.002: SMB/Windows Admin Shares 19.4% 5 T1204.002: Malicious File 16.5% 6 T1070.004: File Deletion 15.5% 7 T1505.003: Web Shell 14.8% 8 T1569.002: Service Execution 14.3% 9 T1016.001: Internet Connection Discovery 14.1% 10 T1021.004: SSH 12.9% MITRE ATT&CK Sub-Techniques Used Most Frequently Command and Scripting Interpreter (T1059) remains a top MITRE ATT&CK tactic, technique, and procedure (TTP) for the fifth consecutive year, followed by Data Staged (T1074), File and Directory Discovery (T1083), and Remote Services (T1021) [1]. Threat Techniques Top 10 Most Frequently Seen MITRE ATT&CK Techniques Rank Technique Percent 1 T1059: Command and Scripting Interpreter 45.9% 2 T1074: Data Staged 39.6% 3 T1083: File and Directory Discovery 33.5% 4 T1021: Remote Services 30.6% 5 T1190: Exploit Public-Facing Application 27.7% 6 T1027: Obfuscated Files or Information 27.2% 7 T1070: Indicator Removal 24.8% 8 T1105: Ingress Tool Transfer 24.5% 9 T1033: System Owner/User Discovery 24.0% 10 T1133: External Remote Services 23.8% [2]. 136.0.20[.]6 185.213.155[.]226 185.155.99[.]161 92.118.232[.]131 45.182.189[.]80 185.65.133[.]51 45.33.22[.]47 Malicious Files From Post-Compromise Activity (Campaign A) SHA256 hash: 24ab9fe5d5be62d3bf055a0ca4508e8bca2996b6d78649dce8145d8a27bc1c5b (obfuscated PowerShell payload) URL: hxxps[:]//san-sid[.]com/owners Cortex XDR Alerts and MITRE ATT&CK\u00ae Techniques Alert Name Alert Source MITRE ATT&CK Technique External user started a Microsoft Teams conversation XDR Analytics, Identity Threats Phishing (T1566) File description: Obfuscated PowerShell RAT dropper downloaded via Invoke-WebRequest Description: URL hosting obfuscated PowerShell payload used as RAT dropper Table 2 lists the Cortex XDR alerts and the associated MITRE ATT&CK techniques these alerts detect [3].",
     "citation_count": 3,
     "citations": [
@@ -467,7 +467,7 @@
     "query": "What MITRE ATT&CK techniques are cataloged in the M-Trends 2026 report for credential access?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1380.5,
+    "latency_ms": 2144.14,
     "generated_answer": "41 Special Report: Mandiant M-Trends 2026 Top 10 Most Frequently Seen MITRE ATT&CK Sub-Techniques Rank Technique Percent 1 T1059.003: Windows Command Shell 26.2% 2 T1059.001: PowerShell 24.0% 3 T1021.001: Remote Desktop Protocol 22.1% 4 T1021.002: SMB/Windows Admin Shares 19.4% 5 T1204.002: Malicious File 16.5% 6 T1070.004: File Deletion 15.5% 7 T1505.003: Web Shell 14.8% 8 T1569.002: Service Execution 14.3% 9 T1016.001: Internet Connection Discovery 14.1% 10 T1021.004: SSH 12.9% MITRE ATT&CK Sub-Techniques Used Most Frequently Command and Scripting Interpreter (T1059) remains a top MITRE ATT&CK tactic, technique, and procedure (TTP) for the fifth consecutive year, followed by Data Staged (T1074), File and Directory Discovery (T1083), and Remote Services (T1021) [2]. Appendix: Mandiant M-Trends 2026 Report 85 Initial Reconnaissance Reconnaissance T1593: Search Open Websites/Domains 16.3% T1590: Gather Victim Network Information 4.4% T1590.002: DNS 4.4% T1592: Gather Victim Host Information 2.9% T1598: Phishing for Information 2.4% T1595: Active Scanning 1.0% T1595.002: Vulnerability Scanning 0.5% T1595.001: Scanning IP Blocks 0.2% T1595.003: Wordlist Scanning 0.2% T1589: Gather Victim Identity Information 0.2% T1589.001: Credentials 0.2% Resource Development T1608: Stage Capabilities 11.7% T1608.001: Upload Malware 3.9% T1608.003: Install Digital Certificate 2.9% T1608.005: Link Target 2.2% T1608.002: Upload Tool 1.9% T1608.006: SEO Poisoning 0.5% T1588: Obtain Capabilities 8.5% T1588.003: Code Signing Certificates 8.3% T1588.007: Artificial Intelligence 0.2% T1583: Acquire Infrastructure 6.8% T1583.003: Virtual Private Server 6.8% T1584: Compromise Infrastructure 3.2% T1587: Develop Capabilities 0.5% T1587.002: Code Signing Certificates 0.2% T1587.003: Digital Certificates 0.2% Techniques Related to Mandiant Targeted Attack Lifecycle, 2025 Mandiant\u2019s Targeted Attack Lifecycle is the predictable sequence of events cyber attackers use to carry out their attacks [3]. 2 Special Report: Mandiant M-Trends 2026 Table of Contents Introduction 3 By the Numbers 6 Campaigns & Global Events 8 Targeted Attacks 10 Ransomware 29 Cloud Compromises 38 Artificial Intelligence 39 Threat Techniques 40 Regional Breakouts Americas 42 EMEA 46 JAPAC 50 Articles 54 A Minor Infection Today Can Be a Ransomware Attack Tomorrow 55 Ransomware is Now a Resilience Problem 60 Multi-Year Intrusions Highlighting Extreme Persistence 66 Adversary Focus on Virtualized Infrastructure 70 The Cascading Impact of Third-Party SaaS Compromises 74 Systematic Exploitation of Edge and Core Network Devices 78 Conclusion 83 MITRE ATT&CK 85 [5].",
     "citation_count": 3,
     "citations": [
@@ -519,7 +519,7 @@
     "query": "What types of developer secrets and credentials were stolen by the ChainDrop npm worm?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1052.95,
+    "latency_ms": 2643.52,
     "generated_answer": "ChainDrop: Inside a Self-Propagating npm Worm Executive Summary Cloud credentials npm and GitHub tokens SSH keys Other sensitive developer data A self-propagating npm worm nicknamed ChainDrop infected over 400 packages that are collectively downloaded hundreds of millions of times each week [1]. Developer credentials: GitHub tokens, npm tokens, SSH keys, Git credentials and private keys Cloud and infrastructure: AWS credentials and parameters, Kubernetes service-account tokens, HashiCorp Vault secrets and Docker authentication CI/CD platforms: Tokens from 18-plus platforms including GitHub Actions, GitLab CI, CircleCI, Vercel and Netlify Third-party services: Database connection strings, Stripe, Slack and Twilio API keys Password managers (new to this wave): The payload directly queries 1Password, Bitwarden, pass and gopass via their local CLIs April 2026 - Shai Hulud: A New Wave Late April Mini Shai-Hulud Wave @cap-js/sqlite@2.2.2 @cap-js/postgres@2.2.2 @cap-js/db-service@2.10.1 mbt @1.2.48 The 499 KB obfuscated payload runs six credential collectors in parallel, sweeping a broad range of targets: All stolen data is encrypted and sent to a C2 endpoint disguised as OpenTelemetry trace ingestion ( t.m-kosche[.]com), meaning network monitoring tools may classify the traffic as legitimate observability telemetry [5]. Once installed, ChainDrop steals: It can also extract temporary credentials from GitHub Actions runner memory and use stolen npm publishing tokens to infect and republish additional packages while preserving their legitimate functionality [1].",
     "citation_count": 2,
     "citations": [
@@ -559,7 +559,7 @@
     "query": "How did attackers harvest credentials in the large-scale credential theft attacks?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1005.37,
+    "latency_ms": 2616.06,
     "generated_answer": "Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18) Executive Summary Details of noteworthy large scale credential attacks Actionable guidance for mitigating these attacks The Hatman attack: In August 2026, the actor TheHatman claimed to have stolen large volume of credentials from organizations' Microsoft Entra tenants Fortibleed Credential Campaign: In June 2026, there was a large-scale password spraying campaign targeting Fortinet devices Identity has effectively become the new perimeter, where cybercriminals are increasingly choosing to log in rather than break in [1]. The attackers have leveraged a multi-stage process to gain persistent, high-privilege access: We observed an initial access broker (IAB) on the Russian-language cybercrime forum Exploit[.]in claiming responsibility for this campaign, referencing a CVE (no further information), and offering the harvested credentials for sale on June 16, 2026 [4]. A large-scale password spraying and credential theft campaign (\u201cFortiBleed\u201d) against Fortinet devices was initially disclosed in June 2026 [2].",
     "citation_count": 3,
     "citations": [
@@ -611,7 +611,7 @@
     "query": "How did the PPI network malware maintain persistence on victim machines?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 1133.85,
+    "latency_ms": 2305.11,
     "generated_answer": "Figure 6: UNC5221 Attack Flow Figure 6: UNC5221 Attack Flow Attacker exploited an edge security appliance to gain initial access to the environment and deployed custom malware to the appliance Attacker harvested credentials from the exploited device and connected to the VPN appliance with stolen credentials Attacker performed extensive reconnaissance and privilege escalation, searching for plaintext credentials across the environment Attacker laterally moved to backup and virtualization infrastructure devices and deployed C2 malware for persistence Attacker continued to perform reconnaissance and privilege escalation in order to maintain long-term access to the environment [4]. PPI networks operate as underground marketplaces [2]. To maintain a minimal on-disk footprint, the threat actor frequently deleted malware binaries after execution, allowing the process to run exclusively in volatile memory on systems that underwent infrequent reboot cycles [3].",
     "citation_count": 3,
     "citations": [
@@ -663,7 +663,7 @@
     "query": "What extreme persistence mechanisms were noted for multi-year intrusions in M-Trends 2026?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 2694.33,
+    "latency_ms": 2597.27,
     "generated_answer": "66 Special Report: Mandiant M-Trends 2026 Multi-Year Intrusions Highlighting Extreme Persistence Sophisticated threat actors seeking long-term access to targeted environments remain a persistent and effective threat [1]. 2 Special Report: Mandiant M-Trends 2026 Table of Contents Introduction 3 By the Numbers 6 Campaigns & Global Events 8 Targeted Attacks 10 Ransomware 29 Cloud Compromises 38 Artificial Intelligence 39 Threat Techniques 40 Regional Breakouts Americas 42 EMEA 46 JAPAC 50 Articles 54 A Minor Infection Today Can Be a Ransomware Attack Tomorrow 55 Ransomware is Now a Resilience Problem 60 Multi-Year Intrusions Highlighting Extreme Persistence 66 Adversary Focus on Virtualized Infrastructure 70 The Cascading Impact of Third-Party SaaS Compromises 74 Systematic Exploitation of Edge and Core Network Devices 78 Conclusion 83 MITRE ATT&CK 85 [2]. 8 Special Report: Mandiant M-Trends 2026 Campaigns are a set of impactful intrusions conducted by an attacker or multiple attackers in cooperation toward a single objective at multiple targets within a relevant time frame [4].",
     "citation_count": 3,
     "citations": [
@@ -715,7 +715,7 @@
     "query": "How was multi-agent orchestration coordinated during the AI-assisted attack?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 2403.2,
+    "latency_ms": 2391.33,
     "generated_answer": "An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation Inside the Machine-Speed Attack Chain Unit 42 responded to an incident where a human attacker used frontier AI to breach an enterprise network autonomously as part of a ransom attack [1]. What made the attack stand out was AI-assisted operational efficiency, without the need for a novel zero-day or super elite tradecraft [1].",
     "citation_count": 1,
     "citations": [
@@ -743,7 +743,7 @@
     "query": "What commodity infrastructure was used to camouflage the pay-per-install malware campaign?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 2425.0,
+    "latency_ms": 2283.6,
     "generated_answer": "Untracked Nightmares: The Threats Hiding Behind Commodity Infrastructure Executive Summary A recent Unit 42 investigation into seemingly low-priority enterprise infections demonstrates how the most effective camouflage in cybercrime is not necessarily in the use of sophisticated techniques, but in how unremarkable the threat appears [1]. The payloads delivered through CL-CRI-1171's infrastructure are not fixed, enabling the simultaneous delivery of unrelated malware families [2]. This NTLM relay attack was designed to grant the attacker domain-level privileges Summary of Tactical Divergence This campaign was blocked by automated Cortex XDR Agent protections during the malware's execution phase [5].",
     "citation_count": 3,
     "citations": [
@@ -795,7 +795,7 @@
     "query": "What shared observation regarding voice phishing (vishing) is reported by both Google Cloud Threat Horizons and Unit 42 Spring Ring?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 3225.15,
+    "latency_ms": 3016.34,
     "generated_answer": "Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams Executive Summary Advanced URL Filtering and Advanced DNS Security Cortex XDR and XSIAM Cortex Advanced Email Security Cortex Cloud Identity Threat Detection Idira Threat Detection and Response (ITDR) Between January and April 2026, we uncovered a coordinated social engineering operation that leveraged external Microsoft Teams accounts to masquerade as IT help desk personnel [2]. 38 Special Report: Mandiant M-Trends 2026 In 2025, the most common initial infection vector found during Mandiant investigations of cloud-related compromises was voice phishing, at 23%, followed by third-party compromise (17%), stolen credentials (16%), email phishing (15%), insider threat (14%), and exploits (6%) [5]. What seems like a benign chat is in fact a voice phishing (vishing) call, during which adversaries try to coerce victims into executing remote monitoring and management (RMM) tools or custom malware [2].",
     "citation_count": 2,
     "citations": [
@@ -835,7 +835,7 @@
     "query": "How do the ChainDrop and npm Threat Landscape reports describe the propagation of malicious packages?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 2661.25,
+    "latency_ms": 2650.39,
     "generated_answer": "The Shai- Hulud worm, a self-replicating malware that automated the compromise and redistribution of malicious packages, marked the end of the \u201cnuisance\u201d era of npm attacks and the beginning of a high- consequence threat landscape [2]. July 2026 Campaign @asyncapi/generator@3.3.1 @asyncapi/specs@6.11.2 @asyncapi/specs@6.11.2-alpha.1 @asyncapi/generator-helpers@1.1.1 @asyncapi/generator-components@0.7.1 The New Baseline for npm Threats Wormable propagation: Malicious payloads now prioritize the theft of npm tokens and GitHub Personal Access Tokens (PATs) to automatically infect and republish legitimate packages, as seen in the March 2026 Axios compromise [3]. ChainDrop: Inside a Self-Propagating npm Worm Executive Summary Cloud credentials npm and GitHub tokens SSH keys Other sensitive developer data A self-propagating npm worm nicknamed ChainDrop infected over 400 packages that are collectively downloaded hundreds of millions of times each week [1].",
     "citation_count": 3,
     "citations": [
@@ -887,7 +887,7 @@
     "query": "How can unauthorized workloads spoof trusted identity tokens in Kubernetes clusters using SPIFFE/SPIRE?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 3542.64,
+    "latency_ms": 3483.38,
     "generated_answer": "The Machine With Many Faces: Post- Exploitation Identity Misuse in SPIFFE/SPIRE Executive Summary Harden nodes This research demonstrates post-exploitation techniques that could allow an attacker with root access on a compromised Kubernetes node to misuse an open standard and reference implementation for machine identity known as SPIFFE/SPIRE to impersonate co-located workloads and harvest SPIFFE Verifiable Identity Documents (SVIDs) [1]. The Secure Production Identity Framework for Everyone (SPIFFE)/the SPIFFE Runtime Environment (SPIRE) is widely deployed in Kubernetes and cloud-native environments to replace long-lived secrets with short-lived, cryptographically verifiable workload identities [1]. While SPIFFE/SPIRE enforces strong cryptographic identity guarantees between workloads, those guarantees rely on the integrity of the environment where attestation occurs [5].",
     "citation_count": 2,
     "citations": [
@@ -927,7 +927,7 @@
     "query": "In what manner did frontier artificial intelligence accelerate operational efficiency during the autonomous cyber intrusion?",
     "expected_abstention": false,
     "is_abstention": false,
-    "latency_ms": 2997.33,
+    "latency_ms": 2998.15,
     "generated_answer": "An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation Inside the Machine-Speed Attack Chain Unit 42 responded to an incident where a human attacker used frontier AI to breach an enterprise network autonomously as part of a ransom attack [1]. What made the attack stand out was AI-assisted operational efficiency, without the need for a novel zero-day or super elite tradecraft [1]. 84 Special Report: Mandiant M-Trends 2026 Our threat intelligence analysts have observed adversaries leveraging AI to accelerate attacks, shifting from mass, static email campaigns toward hyper-personalized, voice-based social engineering, and deploying malware capable of querying large language models mid-execution [2].",
     "citation_count": 2,
     "citations": [
@@ -967,7 +967,7 @@
     "query": "What zero-day exploit was deployed against iOS 19 in the 2029 Stuxnet reboot?",
     "expected_abstention": true,
     "is_abstention": true,
-    "latency_ms": 2436.57,
+    "latency_ms": 2487.01,
     "generated_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
     "citation_count": 0,
     "citations": [],
@@ -982,7 +982,7 @@
     "query": "Which cyber espionage group carried out the December 2015 blackout attack on the Ukrainian power grid according to these reports?",
     "expected_abstention": true,
     "is_abstention": true,
-    "latency_ms": 2098.86,
+    "latency_ms": 2035.86,
     "generated_answer": "I do not have sufficient evidence in the ingested threat intelligence reports to answer this question.",
     "citation_count": 0,
     "citations": [],

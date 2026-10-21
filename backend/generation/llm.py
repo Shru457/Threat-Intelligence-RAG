@@ -240,10 +240,16 @@ class OpenAICompatibleProvider(BaseLLMProvider):
             "temperature": temperature,
             "max_tokens": max_tokens,
         }
-        resp = requests.post(url, headers=headers, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        return data["choices"][0]["message"]["content"].strip()
+        try:
+            resp = requests.post(url, headers=headers, json=payload, timeout=60)
+            resp.raise_for_status()
+            data = resp.json()
+            return data["choices"][0]["message"]["content"].strip()
+        except Exception as err:
+            logger.warning(f"OpenAI compatible call failed: {err}. Falling back to offline extractive provider.")
+            return OfflineExtractiveLLMProvider().generate(
+                prompt=prompt, system_prompt=system_prompt, temperature=temperature, max_tokens=max_tokens
+            )
 
 
 class GeminiProvider(BaseLLMProvider):
@@ -279,13 +285,19 @@ class GeminiProvider(BaseLLMProvider):
                 "maxOutputTokens": max_tokens,
             },
         }
-        resp = requests.post(url, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        candidates = data.get("candidates", [])
-        if not candidates:
-            return INSUFFICIENT_EVIDENCE_MESSAGE
-        return candidates[0]["content"]["parts"][0]["text"].strip()
+        try:
+            resp = requests.post(url, json=payload, timeout=60)
+            resp.raise_for_status()
+            data = resp.json()
+            candidates = data.get("candidates", [])
+            if not candidates:
+                return INSUFFICIENT_EVIDENCE_MESSAGE
+            return candidates[0]["content"]["parts"][0]["text"].strip()
+        except Exception as err:
+            logger.warning(f"Gemini API call failed: {err}. Falling back to offline extractive provider.")
+            return OfflineExtractiveLLMProvider().generate(
+                prompt=prompt, system_prompt=system_prompt, temperature=temperature, max_tokens=max_tokens
+            )
 
 
 class OllamaProvider(BaseLLMProvider):
@@ -316,10 +328,16 @@ class OllamaProvider(BaseLLMProvider):
             "stream": False,
             "options": {"temperature": temperature},
         }
-        resp = requests.post(url, json=payload, timeout=90)
-        resp.raise_for_status()
-        data = resp.json()
-        return data["message"]["content"].strip()
+        try:
+            resp = requests.post(url, json=payload, timeout=90)
+            resp.raise_for_status()
+            data = resp.json()
+            return data["message"]["content"].strip()
+        except Exception as err:
+            logger.warning(f"Ollama generation call failed: {err}. Falling back to offline extractive provider.")
+            return OfflineExtractiveLLMProvider().generate(
+                prompt=prompt, system_prompt=system_prompt, temperature=temperature, max_tokens=max_tokens
+            )
 
 
 def get_llm_provider(provider_name: str | None = None) -> BaseLLMProvider:
@@ -365,7 +383,28 @@ def get_llm_provider(provider_name: str | None = None) -> BaseLLMProvider:
     if chosen == "ollama":
         try:
             prov = OllamaProvider()
-            return prov
+            try:
+                probe = requests.get(f"{prov.base_url}/api/tags", timeout=1.0)
+                if probe.status_code == 200:
+                    installed_models = probe.json().get("models", [])
+                    if not installed_models:
+                        logger.warning(
+                            f"Ollama server is running at {prov.base_url} but has no models installed "
+                            "(run 'ollama pull llama3' to install). Falling back to OfflineExtractiveLLMProvider."
+                        )
+                        return OfflineExtractiveLLMProvider()
+                    return prov
+                logger.warning(
+                    f"Ollama server at {prov.base_url} returned status {probe.status_code}. "
+                    "Falling back to OfflineExtractiveLLMProvider."
+                )
+                return OfflineExtractiveLLMProvider()
+            except Exception as probe_err:
+                logger.warning(
+                    f"Ollama server not reachable at {prov.base_url} ({probe_err}). "
+                    "Falling back to OfflineExtractiveLLMProvider."
+                )
+                return OfflineExtractiveLLMProvider()
         except Exception as err:
             logger.warning(f"Ollama provider failed initialization: {err}. Falling back to offline.")
             return OfflineExtractiveLLMProvider()

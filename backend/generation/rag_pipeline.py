@@ -121,7 +121,15 @@ class RAGPipeline:
 
         # Step 4: Generate answer
         gen_start = time.perf_counter()
-        raw_answer = self.provider.generate(prompt=prompt, system_prompt=SYSTEM_PROMPT)
+        try:
+            raw_answer = self.provider.generate(prompt=prompt, system_prompt=SYSTEM_PROMPT)
+        except Exception as err:
+            logger.warning(
+                f"Configured provider '{self.provider.name}' failed during generation: {err}. "
+                "Falling back to OfflineExtractiveLLMProvider."
+            )
+            offline_fallback = OfflineExtractiveLLMProvider()
+            raw_answer = offline_fallback.generate(prompt=prompt, system_prompt=SYSTEM_PROMPT)
         gen_latency = time.perf_counter() - gen_start
 
         # Step 5: Post-process abstention and citations
